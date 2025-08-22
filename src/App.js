@@ -18,7 +18,7 @@ function App() {
 
   const agregarTarea = (titulo) => {
     generarCodigo();
-    setTareas([...tareas, { id:codigo, titulo: titulo, completada: false }]);
+    setTareas([...tareas, { id: codigo, titulo: titulo, completada: false }]);
   }
 
   const generarCodigo = () => {
@@ -44,23 +44,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
-        Lista de Tareas
-      </h1>
-      <Avance total={tareas.length} completadas={tareasCompletadas} />
-      <TareaInput agregar={agregarTarea} />
-      <ul>
-        {tareas.map((item) => (
-          <Tareas
-            key={item.id}
-            tarea={item}
-            activar={interruptor}
-            editar={editarTarea}
-            eliminar={eliminarTarea}
-          />
-        ))}
-      </ul>
-
+      <div className="contenedor">
+          <h1>
+            Lista de Tareas
+          </h1>
+          <Avance total={tareas.length} completadas={tareasCompletadas} />
+        <TareaInput agregar={agregarTarea} />
+        <ul className="lista">
+          {tareas.map((item) => (
+            <Tareas
+              key={item.id}
+              tarea={item}
+              activar={interruptor}
+              editar={editarTarea}
+              eliminar={eliminarTarea}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

@@ -9,12 +9,10 @@ export default function TareaInput({ agregar }) {
         setTitulo("");
     }
     return (
-        <form onSubmit={guardarTarea}>
-            <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Escribir una Tarea">
+        <form onSubmit={guardarTarea} className="formulario">
+            <input className="txtAgregar" type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Escribir una Tarea">
             </input>
-            <buttom type="submit">
-                +
-            </buttom>
+            <button type="submit" className="btnAgregar" > + </button>
         </form>
     );
 }
